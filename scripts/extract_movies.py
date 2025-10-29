@@ -16,4 +16,9 @@ def main(src=None):
             print(f"Found raw file: {candidate}")
         else:
             raise SystemExit("No raw movies.csv found. Put one at data/raw/movies.csv or pass --src")
-        
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--src", help="path to csv to copy into raw folder")
+    args = parser.parse_args()
+    main(args.src)
