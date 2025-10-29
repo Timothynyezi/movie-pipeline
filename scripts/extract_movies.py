@@ -11,4 +11,9 @@ def main(src=None):
         shutil.copy(src, dest)
         print(f"Copied {src} -> {dest}")
     else:
-        pass
+        candidate = RAW_DIR / "movies.csv"
+        if candidate.exists():
+            print(f"Found raw file: {candidate}")
+        else:
+            raise SystemExit("No raw movies.csv found. Put one at data/raw/movies.csv or pass --src")
+        
