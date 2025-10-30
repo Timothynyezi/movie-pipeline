@@ -14,3 +14,5 @@ if RAW_PATH.exists():
     df.dropna(subset=["title"], inplace=True)
     df.to_csv(PROCESSED_PATH, index=False)
     print(f"Saved processed file to: {PROCESSED_PATH}")
+else:
+    print(f"Raw file not found:  {RAW_PATH}")
