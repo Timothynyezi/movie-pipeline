@@ -6,3 +6,9 @@ import os
 
 
 load_dotenv()
+
+PGHOST = os.getenv("PGHOST", "localhost")
+PGPORT = os.getenv("PGPORT", "5432")
+PGUSER = os.getenv("PGUSER", "postgres")
+PGPASSWORD = os.getenv("PASSWORD", "docker")
+PGDATABASE = os.getenv("PDGDATABASE", "movies_db")
