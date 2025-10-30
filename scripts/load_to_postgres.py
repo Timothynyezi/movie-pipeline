@@ -24,4 +24,6 @@ def main():
         df['year'] = pd.to_numeric(df['year'], errors='coerce').astype('Int64')
     if 'imbd_rating' in df.columns:
         df['rating_category'] = df['imbd_rating'].apply(categorize_rating)
-        
+    df = df.drop_duplicates()
+    df.to_csv(PROC, index=False)
+    print(f"Wrote processed file to {PROC}")
