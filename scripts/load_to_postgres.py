@@ -17,4 +17,7 @@ def categorize_rating(r):
     return "low"
 
 def main():
-    pass
+    df = pd.read_csv(RAW)
+    df.columns = [c.strip().lower() for c in df.columns]
+
+    
