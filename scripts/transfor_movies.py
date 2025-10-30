@@ -12,3 +12,11 @@ PGPORT = os.getenv("PGPORT", "5432")
 PGUSER = os.getenv("PGUSER", "postgres")
 PGPASSWORD = os.getenv("PASSWORD", "docker")
 PGDATABASE = os.getenv("PDGDATABASE", "movies_db")
+
+PROC = Path(__file__).resolve().parents[1] / "data" / "processed" / "movies_processed.csv"
+
+def engine_url():
+    return f"postgressql+psycop2://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}:{PGDATABASE}"
+
+def main():
+    pass
