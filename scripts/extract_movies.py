@@ -10,4 +10,7 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 if RAW_PATH.exists():
     print(f"Found raw file: {RAW_PATH}")
     df = pd . read_csv(RAW_PATH)
-    
+
+    df.dropna(subset=["title"], inplace=True)
+    df.to_csv(PROCESSED_PATH, index=False)
+    print(f"Saved processed file to: {PROCESSED_PATH}")
