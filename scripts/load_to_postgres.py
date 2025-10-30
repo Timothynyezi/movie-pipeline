@@ -20,4 +20,5 @@ def main():
     df = pd.read_csv(RAW)
     df.columns = [c.strip().lower() for c in df.columns]
 
-    
+    if 'year' in df.columns:
+        df['year'] = pd.to_numeric(df['year'], errors='coerce').astype('Int64')
