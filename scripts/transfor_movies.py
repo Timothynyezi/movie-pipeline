@@ -26,3 +26,7 @@ def main():
 
     df.to_sql("movies", eng, if_exists="replace", index=False)
     print("Loaded processed data into movies table")
+
+
+if __name__ == "__main__":
+    main()
