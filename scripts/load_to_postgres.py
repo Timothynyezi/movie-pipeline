@@ -27,3 +27,6 @@ def main():
     df = df.drop_duplicates()
     df.to_csv(PROC, index=False)
     print(f"Wrote processed file to {PROC}")
+
+    if __name__ == "__main__":
+        main()
