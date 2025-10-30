@@ -25,4 +25,4 @@ def main():
     eng = create_engine(engine_url(), echo=False)
 
     df.to_sql("movies", eng, if_exists="replace", index=False)
-    
+    print("Loaded processed data into movies table")
