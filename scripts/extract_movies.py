@@ -9,3 +9,5 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
 if RAW_PATH.exists():
     print(f"Found raw file: {RAW_PATH}")
+    df = pd . read_csv(RAW_PATH)
+    
