@@ -19,4 +19,6 @@ def engine_url():
     return f"postgressql+psycop2://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}:{PGDATABASE}"
 
 def main():
-    pass
+    if not PROC.exists():
+        raise SystemExit(f"Processed file not found: {PROC}")
+    df = pd.read_csv(PROC)
