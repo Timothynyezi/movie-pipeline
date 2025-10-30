@@ -15,3 +15,6 @@ def categorize_rating(r):
     if r >= 7.0:
         return "medium"
     return "low"
+
+def main():
+    pass
