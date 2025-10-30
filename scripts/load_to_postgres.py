@@ -7,4 +7,11 @@ PROC = BASE / "data" / "processed" / "movies_processed.csv"
 PROC.parent.mkdir(parents=True, exist_ok=True)
 
 def categorize_rating(r):
-    pass
+    if pd.isna(r):
+        return None
+    r = float(r)
+    if r >= 8.5:
+        return "high"
+    if r >= 7.0:
+        return "medium"
+    return "low"
